@@ -18,7 +18,8 @@ const mimeTypes = {
   '.ico': 'image/x-icon',
   '.json': 'application/json',
   '.mp4': 'video/mp4',
-  '.webm': 'video/webm'
+  '.webm': 'video/webm',
+  '.webp': 'image/webp'
 };
 
 server.getContentType = url => {
@@ -118,7 +119,7 @@ server.init = (port = 3000, host = '127.0.0.1') => {
 /// APP CODE STARTS HERE:
 
 function getMediaFiles() {
-  return fs.readdirSync(__dirname).filter(e=>e.endsWith(".jpg")||e.endsWith(".png")||e.endsWith(".mp4")||e.endsWith(".webm"));
+  return fs.readdirSync(__dirname).filter(e=>e.endsWith(".jpg")||e.endsWith(".png")||e.endsWith(".mp4")||e.endsWith(".webm")||e.endsWith(".webp"));
 }
 
 const indexHandler = (requestData, callback) => {
